@@ -7,28 +7,31 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 public class Event {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)  
-	private int id;
+	@Column(name = "event_id", nullable = false)  
+	private int event_id;
 	private String title;
 	private String description;
 	private String type;
-	private Date startdate;
-	private String starttime;
-	private Date enddate;
-	private String endtime;
+	@JsonFormat(pattern="dd-MM-yyyy")
+	private Date startDate;
+	private String startTime;
+	@JsonFormat(pattern="dd-MM-yyyy")
+	private Date endDate;
+	private String endTime;
 	private String location;
-	private int volunteerscount; 
-	private boolean requiredowner;
-	public int getId() {
-		return id;
+	private int volunteerCount; 
+	private boolean requiredOwner;
+	public int getEvent_id() {
+		return event_id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setEvent_id(int event_id) {
+		this.event_id = event_id;
 	}
 	public String getTitle() {
 		return title;
@@ -48,29 +51,29 @@ public class Event {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public Date getStartdate() {
-		return startdate;
+	public Date getStartDate() {
+		return startDate;
 	}
-	public void setStartdate(Date startdate) {
-		this.startdate = startdate;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
-	public String getStarttime() {
-		return starttime;
+	public String getStartTime() {
+		return startTime;
 	}
-	public void setStarttime(String starttime) {
-		this.starttime = starttime;
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
 	}
-	public Date getEnddate() {
-		return enddate;
+	public Date getEndDate() {
+		return endDate;
 	}
-	public void setEnddate(Date enddate) {
-		this.enddate = enddate;
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
-	public String getEndtime() {
-		return endtime;
+	public String getEndTime() {
+		return endTime;
 	}
-	public void setEndtime(String endtime) {
-		this.endtime = endtime;
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 	public String getLocation() {
 		return location;
@@ -78,19 +81,21 @@ public class Event {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public int getVolunteerscount() {
-		return volunteerscount;
+	public int getVolunteerCount() {
+		return volunteerCount;
 	}
-	public void setVolunteerscount(int volunteerscount) {
-		this.volunteerscount = volunteerscount;
+	public void setVolunteerCount(int volunteerCount) {
+		this.volunteerCount = volunteerCount;
 	}
-	public boolean isRequiredowner() {
-		return requiredowner;
+	public boolean isRequiredOwner() {
+		return requiredOwner;
 	}
-	public void setRequiredowner(boolean requiredowner) {
-		this.requiredowner = requiredowner;
+	public void setRequiredOwner(boolean requiredOwner) {
+		this.requiredOwner = requiredOwner;
 	}
 	
 	
-
+	
+	
+	
 }

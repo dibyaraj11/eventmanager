@@ -1,5 +1,7 @@
 package com.example.event.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,35 @@ public class EventService
 	
 	public Event createEvent(Event e)
 	{
-		return repo.saveAndFlush(e);
+		return repo.save(e);
+	}
+
+	public Event getEventbyId(int id) {
+		Optional<Event> e= repo.findById(id);
+		if(e.isPresent())
+		{
+			return e.get();
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public Event updateEventById(Event e) {
+		return repo.save(e);
+	}
+
+	public boolean deleteEventbyId(int id) {
+		
+		if(repo.existsById(id))
+		{
+			repo.deleteById(id);
+			return true;
+		}
+		return false;
+		
+		
 	}
 
 }
