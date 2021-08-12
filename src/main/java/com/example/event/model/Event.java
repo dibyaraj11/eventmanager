@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 public class Event {
@@ -93,9 +95,6 @@ public class Event {
 	public void setRequiredOwner(boolean requiredOwner) {
 		this.requiredOwner = requiredOwner;
 	}
-	
-	
-	
-	
+
 	
 }
