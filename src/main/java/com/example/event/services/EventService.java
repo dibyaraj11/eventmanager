@@ -1,5 +1,6 @@
 package com.example.event.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,12 @@ public class EventService
 		return false;
 		
 		
+	}
+
+	public Iterable<Event> getEvenList()
+	{
+		return repo.findAll();
+
 	}
 
 }

@@ -30,6 +30,11 @@ public class ShiftController {
 		return service.getShift(id);
 	}
 	
+	@GetMapping("/Shift")
+	public Iterable<Shift> getShiftList() {
+		return service.getShiftList();
+	}
+	
 	@GetMapping("/ShiftByEventID/{eventId}")
 	public List<Shift> getShiftByEventID(@PathVariable Integer eventId) throws Exception {
 		return service.ShiftByEventID(eventId);

@@ -1,5 +1,7 @@
 package com.example.event.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,7 @@ public class EventController
 	@Autowired
 	EventService service;
 	
+	
 	@PostMapping("/event")
 	public Event createEvent(@RequestBody Event e)
 	{
@@ -28,6 +31,11 @@ public class EventController
 	public Event getEventbyId(@PathVariable int id)
 	{
 		return service.getEventbyId(id);
+	}
+	@GetMapping("/event")
+	public Iterable<Event> getEventList()
+	{
+		return service.getEvenList();
 	}
 	@PutMapping("/event")
 	public Event updateEventById(@RequestBody Event e)

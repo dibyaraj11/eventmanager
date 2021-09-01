@@ -68,4 +68,9 @@ public class ShiftService {
 		return null;
 	}
 
+	public Iterable<Shift> getShiftList() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+
 }

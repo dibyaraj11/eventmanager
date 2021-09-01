@@ -49,6 +49,11 @@ public class VolunteerService
 		
 		
 	}
+
+	public Iterable<Volunteer> getVolunteerList() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
 	
 	
 }

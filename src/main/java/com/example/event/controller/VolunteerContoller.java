@@ -30,6 +30,12 @@ public class VolunteerContoller {
 		return service.getVolunteer(mobile);
 	}
 	
+	@GetMapping("/volunteer")
+	public Iterable<Volunteer> getVolunteerList()
+	{
+		return service.getVolunteerList();
+	}
+	
 	@PutMapping("/volunteer")
 	public Volunteer updateVolunteer(@RequestBody Volunteer v)
 	{
