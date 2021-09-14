@@ -75,7 +75,6 @@ public class ShiftService {
 	}
 
 	public Shift createRoleByShiftId(Integer id, String role) {
-		// TODO Auto-generated method stub
 		Shift shift = getShift(id);
 		ArrayList<String> roleList= shift.getRole();
 		if(!roleList.contains(role))
