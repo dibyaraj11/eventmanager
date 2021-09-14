@@ -32,8 +32,19 @@ public class Shift {
 	@Column(nullable = false)
     private int eventId;
 	
+	@Column(nullable = false)
+    private String role;
+	
+	
+	
 
 
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public int getEventId() {
 		return eventId;
 	}

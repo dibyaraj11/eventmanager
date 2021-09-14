@@ -19,8 +19,19 @@ public class EventShiftVolunteerIdentity implements Serializable{
     @NotNull
     private int id;
     
+    @NotNull
+    private String role;
+    
 
-    public int getEvent_id() {
+    public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public int getEvent_id() {
 		return event_id;
 	}
 
