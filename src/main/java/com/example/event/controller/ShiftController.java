@@ -30,6 +30,12 @@ public class ShiftController {
 		return service.getShift(id);
 	}
 	
+	@PostMapping("/shift/{id}/{role}")
+	public Shift createRoleByShiftId(@PathVariable Integer id,@PathVariable String role) throws Exception {
+		return service.createRoleByShiftId(id,role);
+	}
+	
+	
 	@GetMapping("/Shift")
 	public Iterable<Shift> getShiftList() {
 		return service.getShiftList();

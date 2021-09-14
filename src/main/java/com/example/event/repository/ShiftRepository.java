@@ -15,4 +15,5 @@ public interface ShiftRepository extends CrudRepository<Shift, Integer> {
 	@Query("SELECT u FROM Shift u WHERE u.eventId = :id")
 	List<Shift> findShiftByEventId(@Param("id") Integer id);
 
+
 }

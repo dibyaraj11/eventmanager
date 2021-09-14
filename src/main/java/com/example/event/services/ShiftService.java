@@ -1,5 +1,6 @@
 package com.example.event.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -71,6 +72,26 @@ public class ShiftService {
 	public Iterable<Shift> getShiftList() {
 		// TODO Auto-generated method stub
 		return repo.findAll();
+	}
+
+	public Shift createRoleByShiftId(Integer id, String role) {
+		// TODO Auto-generated method stub
+		Shift shift = getShift(id);
+		ArrayList<String> roleList= shift.getRole();
+		if(!roleList.contains(role))
+		{
+			roleList.add(role);
+			shift.setRole(roleList);
+			try {
+				createShift(shift);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return shift;
+		
 	}
 
 }

@@ -1,17 +1,13 @@
 package com.example.event.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-
-import org.springframework.lang.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -33,16 +29,14 @@ public class Shift {
     private int eventId;
 	
 	@Column(nullable = false)
-    private String role;
-	
+    private ArrayList<String> role;
 	
 	
 
-
-	public String getRole() {
+	public ArrayList<String> getRole() {
 		return role;
 	}
-	public void setRole(String role) {
+	public void setRole(ArrayList<String> role) {
 		this.role = role;
 	}
 	public int getEventId() {
