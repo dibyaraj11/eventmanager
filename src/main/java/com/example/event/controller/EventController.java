@@ -17,6 +17,9 @@ public class EventController
 {	
 	@Autowired
 	EventService service;
+
+	@Autowired
+	EventService event_service;
 	
 	
 	@PostMapping("/event")
