@@ -14,6 +14,9 @@ public class EventService
 {
 	@Autowired
 	EventRepository repo;
+
+	@Autowired
+	EventRepository repo_test;
 	
 	public Event createEvent(Event e)
 	{
